@@ -1,4 +1,5 @@
 
+/* ===== COLORES ===== */
 :root {
     --bordo: #762c2c;
     --rojo: #a94438;
@@ -8,6 +9,7 @@
     --texto: #39302b;
 }
 
+/* ===== CONFIGURACION GENERAL ===== */
 * {
     margin: 0;
     padding: 0;
@@ -16,91 +18,98 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--crema);
+    background: var(--crema);
     color: var(--texto);
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
-/* ENCABEZADO */
-
+/* ===== HEADER ===== */
 header {
-    background-color: var(--bordo);
+    width: 100%;
+    background: var(--bordo);
     color: white;
-    padding: 25px;
+    padding: 25px 8%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    text-align: left;
 }
 
 header img {
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
     object-fit: contain;
 }
 
 header h1 {
     font-size: 32px;
+    margin-bottom: 3px;
 }
 
-/* MENU */
+header p {
+    margin: 0;
+}
 
+/* ===== NAVEGACION ===== */
 nav {
-    background-color: var(--rojo);
+    width: 100%;
+    background: var(--rojo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
     padding: 15px;
-    text-align: center;
 }
 
 nav a {
-    display: inline-block;
     color: white;
     text-decoration: none;
     font-weight: bold;
     padding: 10px 20px;
-    margin: 3px;
     border-radius: 6px;
+    transition: 0.3s;
 }
 
 nav a:hover,
 nav a.activo {
-    background-color: var(--bordo);
+    background: var(--bordo);
     color: var(--dorado);
 }
 
-/* CONTENIDO */
-
+/* ===== CONTENIDO ===== */
 main {
     width: 90%;
-    max-width: 1150px;
+    max-width: 1100px;
     margin: 40px auto;
 }
 
 h2 {
     color: var(--bordo);
-    margin: 25px 0 15px;
+    margin: 25px 0 20px;
+    font-size: 28px;
 }
 
 h3 {
     color: var(--rojo);
-    margin: 12px 0;
+    margin: 15px 0 10px;
 }
 
 p {
     margin-bottom: 15px;
 }
 
-/* PORTADA */
-
+/* ===== PORTADA ===== */
 .hero {
-    background: linear-gradient(rgba(70,20,20,.75), rgba(70,20,20,.75)),
-    url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=80");
-
+    width: 100%;
+    background:
+        linear-gradient(rgba(70,20,20,.75), rgba(70,20,20,.75)),
+        url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=80");
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 90px 25px;
+    padding: 90px 30px;
     border-radius: 12px;
     margin-bottom: 35px;
 }
@@ -108,42 +117,50 @@ p {
 .hero h2 {
     color: white;
     font-size: 38px;
+    margin-bottom: 15px;
 }
 
-/* BOTONES */
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 25px;
+}
 
+/* ===== BOTONES ===== */
 .boton {
     display: inline-block;
-    background-color: var(--dorado);
+    background: var(--dorado);
     color: var(--bordo);
     text-decoration: none;
     font-weight: bold;
-    padding: 12px 25px;
+    padding: 12px 24px;
     border-radius: 7px;
-    margin-top: 10px;
+    transition: 0.3s;
 }
 
 .boton:hover {
-    background-color: var(--bordo);
+    background: var(--bordo);
     color: white;
 }
 
-/* TARJETAS */
-
+/* ===== TARJETAS ===== */
 .tarjetas {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
-    margin: 30px 0;
+    width: 100%;
+    margin: 25px 0;
 }
 
 .tarjeta {
-    background-color: var(--blanco);
+    background: var(--blanco);
     border-radius: 12px;
     overflow: hidden;
     text-align: center;
     padding-bottom: 25px;
     box-shadow: 0 4px 12px rgba(0,0,0,.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tarjeta img {
@@ -152,24 +169,27 @@ p {
     object-fit: cover;
 }
 
-.tarjeta p {
-    padding: 0 15px;
+.tarjeta h3 {
+    margin: 15px 0 5px;
 }
 
-/* DESTACADO */
+.tarjeta p {
+    padding: 0 15px;
+    flex-grow: 1;
+}
 
+/* ===== DESTACADO ===== */
 .destacado {
-    background-color: #ead9bd;
+    background: #ead9bd;
     border-left: 6px solid var(--dorado);
     padding: 22px;
     border-radius: 8px;
     margin: 30px 0;
 }
 
-/* CONTENIDO EXTRA */
-
+/* ===== OTROS ELEMENTOS ===== */
 .contenido {
-    background-color: var(--blanco);
+    background: var(--blanco);
     padding: 30px;
     border-radius: 12px;
     margin: 25px 0;
@@ -177,6 +197,8 @@ p {
 
 .imagen {
     width: 100%;
+    max-height: 400px;
+    object-fit: cover;
     border-radius: 12px;
     margin: 20px 0;
 }
@@ -191,10 +213,10 @@ p {
     border-radius: 12px;
 }
 
-/* PIE DE PAGINA */
-
+/* ===== FOOTER ===== */
 footer {
-    background-color: var(--bordo);
+    width: 100%;
+    background: var(--bordo);
     color: white;
     text-align: center;
     padding: 30px 15px;
@@ -203,6 +225,7 @@ footer {
 
 footer p {
     margin: 7px 0;
+    font-size: 14px;
 }
 
 footer a {
@@ -210,23 +233,26 @@ footer a {
     text-decoration: none;
 }
 
-/* CELULARES */
-
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         text-align: center;
     }
 
-    nav a {
-        padding: 8px 10px;
-    }
-
     .tarjetas {
         grid-template-columns: 1fr;
     }
 
+    .hero {
+        padding: 60px 20px;
+    }
+
     .hero h2 {
         font-size: 28px;
+    }
+
+    main {
+        width: 92%;
     }
 }
